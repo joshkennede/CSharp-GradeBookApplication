@@ -43,23 +43,24 @@ namespace GradeBook.UserInterfaces
             var gradeBookName = parts[1];
             var gradeBookType = parts[2];
 
+            BaseGradeBook gradeBook;
+
             if (gradeBookType == Enums.GradeBookType.Standard.ToString())
             {
-                StandardGradeBook standardGradeBook = new StandardGradeBook(gradeBookName);
-                Console.WriteLine("Created gradebook {0}.", gradeBookName);
-                GradeBookUserInterface.CommandLoop(standardGradeBook);
+                gradeBook = new StandardGradeBook(gradeBookName);
             }
             else if (gradeBookType == Enums.GradeBookType.Standard.ToString())
             {
-                RankedGradeBook rankedGradeBook = new RankedGradeBook(gradeBookName);
-                Console.WriteLine("Created gradebook {0}.", gradeBookName);
-                GradeBookUserInterface.CommandLoop(rankedGradeBook);
+                gradeBook = new RankedGradeBook(gradeBookName);
             }
             else
             {
                 Console.WriteLine("{0} is not a supported type of gradebook, please try again", gradeBookName);
                 return;
             }
+
+            Console.WriteLine("Created gradebook {0}.", gradeBookName);
+            GradeBookUserInterface.CommandLoop(gradeBook);
         }
 
         public static void LoadCommand(string command)
