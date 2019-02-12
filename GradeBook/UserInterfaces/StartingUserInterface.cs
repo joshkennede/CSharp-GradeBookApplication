@@ -45,11 +45,11 @@ namespace GradeBook.UserInterfaces
 
             BaseGradeBook gradeBook;
 
-            if (gradeBookType == Enums.GradeBookType.Standard.ToString())
+            if (gradeBookType == "standard")
             {
                 gradeBook = new StandardGradeBook(gradeBookName);
             }
-            else if (gradeBookType == Enums.GradeBookType.Standard.ToString())
+            else if (gradeBookType == "ranked")
             {
                 gradeBook = new RankedGradeBook(gradeBookName);
             }
