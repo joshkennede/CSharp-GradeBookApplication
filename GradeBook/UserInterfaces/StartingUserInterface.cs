@@ -45,13 +45,13 @@ namespace GradeBook.UserInterfaces
 
             if (gradeBookType == Enums.GradeBookType.Standard.ToString())
             {
-                var standardGradeBook = new StandardGradeBook(gradeBookName);
+                StandardGradeBook standardGradeBook = new StandardGradeBook(gradeBookName);
                 Console.WriteLine("Created gradebook {0}.", gradeBookName);
                 GradeBookUserInterface.CommandLoop(standardGradeBook);
             }
             else if (gradeBookType == Enums.GradeBookType.Standard.ToString())
             {
-                var rankedGradeBook = new RankedGradeBook(gradeBookName);
+                RankedGradeBook rankedGradeBook = new RankedGradeBook(gradeBookName);
                 Console.WriteLine("Created gradebook {0}.", gradeBookName);
                 GradeBookUserInterface.CommandLoop(rankedGradeBook);
             }
